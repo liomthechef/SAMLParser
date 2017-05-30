@@ -43,7 +43,7 @@ Examples:
     java -jar org.sakaiproject.Hilary.SAMLParser-1.0-SNAPSHOT-jar-with-dependencies.jar <idpPublicKey> <spPublicKey> <spPrivateKey> '<base64-encoded XML data>' 'base64'
     java -jar org.sakaiproject.Hilary.SAMLParser-1.0-SNAPSHOT-jar-with-dependencies.jar <idpPublicKey> <spPublicKey> <spPrivateKey> '<base64-encoded XML data>' 'base64' 'base64'
 ```
-
+```
 It seems that loading xml data in as plain has problems parsing xml properly, encoding it as base64 seems to resolve the issue
 suggested usage for ease of use assuming windows powershell but unix systems will be similar
 $key = cat ./privatekey.pem
@@ -54,7 +54,7 @@ at present this has the idppublickey signature verification disabled non gracefu
 java -jar org.sakaiproject.Hilary.SAMLParser-1.0-SNAPSHOT-jar-with-dependencies.jar $pub $pub $key $assertion 'base64'
 
 pem file cert input must not have carriage returns or line breaks included in the file, my test also removed the begin cert/end cert characters, but have not verified if it works with that included.
-
+```
 ## License
 
 ```
