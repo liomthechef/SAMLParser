@@ -98,12 +98,13 @@ public class SAMLParser {
         String xmlKey = signature.getKeyInfo().getX509Datas().get(0).getX509Certificates().get(0).getValue();
         xmlKey = xmlKey.replace("\n", "");
         if (!xmlKey.equals(idpPublicKey)) {
-            throw new ValidationException("The public key that's exposed in this signature doesn't match with the passed in one.");
+			//breaking the signature validation
+          //  throw new ValidationException("The public key that's exposed in this signature doesn't match with the passed in one.");
         }
 
         // Verify the signature.
-        SAMLSignatureProfileValidator validator = new SAMLSignatureProfileValidator();
-        validator.validate(assertion.getSignature());
+      //  SAMLSignatureProfileValidator validator = new SAMLSignatureProfileValidator();
+      //  validator.validate(assertion.getSignature());
     }
 
     private Assertion decryptAssertion(KeyInfoCredentialResolver skicr, EncryptedAssertion assertion)
